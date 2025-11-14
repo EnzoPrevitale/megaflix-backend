@@ -1,7 +1,7 @@
 import mysql.connector
 from mysql.connector import Error
 from contextlib import contextmanager
-from .. import properties
+from magu import properties
 
 class Database:
     @staticmethod

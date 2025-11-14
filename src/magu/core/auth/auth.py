@@ -1,7 +1,7 @@
 import jwt
 from datetime import datetime, timedelta
 from models.model import Model
-import src.properties as properties
+import magu.properties as properties
 
 class Authentication:
     @staticmethod

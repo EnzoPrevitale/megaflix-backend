@@ -1,4 +1,4 @@
-from core import router
+from magu.core import router
 
 def request_mapping(uri: str = "/"):
     def wrapper(cls):

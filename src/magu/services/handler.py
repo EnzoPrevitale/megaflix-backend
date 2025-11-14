@@ -9,6 +9,11 @@ class Handler(SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(json.dumps(data).encode('utf-8'))
 
+    def send_400_status(self, message: str, status: int = 400):
+        self.send_response(status)
+        self.end_headers()
+        self.wfile.write(b"404 Not Found")
+
     def send_token(self, data, token, status: int = 200):
         self.send_response(status)
         self.send_header("Content-Type", "application/json")
