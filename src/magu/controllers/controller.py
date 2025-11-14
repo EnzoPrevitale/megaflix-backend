@@ -45,3 +45,6 @@ class Controller:
     def __init__(self):
         self.uri = self._uri
         router.get_routes(self.__class__)
+
+    def __str__(self):
+        return f"Controller for {self.uri}"

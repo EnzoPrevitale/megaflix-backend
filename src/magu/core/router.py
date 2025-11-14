@@ -2,7 +2,7 @@ from controllers.controller import Controller
 from services.handler import Handler
 import inspect
 
-routes: dict[str, Controller] = {}
+routes: dict[str, Controller.__class__] = {}
 
 def get_routes(controller: Controller.__class__):
      for _, func in inspect.getmembers(controller, inspect.isfunction):
@@ -22,6 +22,7 @@ def get_methods(uri: str, method: str):
                 methods.append(routes[name])
              
         return methods
+
 
 class Router:
     def route(self, handler: Handler, http_method: str):
