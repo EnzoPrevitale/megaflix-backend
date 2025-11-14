@@ -1,7 +1,7 @@
 from http.server import HTTPServer
 from services.handler import Handler
 from core.router import Router
-import properties
+import properties as properties
 
 class ServerHandler(Handler):
     router = Router()

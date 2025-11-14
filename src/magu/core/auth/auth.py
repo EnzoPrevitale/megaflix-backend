@@ -1,7 +1,7 @@
 import jwt
 from datetime import datetime, timedelta
 from models.model import Model
-import properties
+import src.properties as properties
 
 class Authentication:
     @staticmethod

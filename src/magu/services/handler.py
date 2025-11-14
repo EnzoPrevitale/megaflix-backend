@@ -1,5 +1,4 @@
 from http.server import SimpleHTTPRequestHandler
-import os
 import json
 from urllib.parse import urlsplit, unquote
 
@@ -23,7 +22,7 @@ class Handler(SimpleHTTPRequestHandler):
         try:
             return json.loads(body)
         except json.JSONDecodeError:
-            return None
+            self.send_error(400, "Bad Request")
     
     def parse_headers(self):
         auth_header = self.headers.get("Authorization")
