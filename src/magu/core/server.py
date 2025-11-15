@@ -4,24 +4,22 @@ from magu.core.router import Router
 import magu.properties as properties
 
 class ServerHandler(Handler):
-    def __init__(self, request, client_address, server):
-        self.router = Router(self)
-        super().__init__(request, client_address, server)
+    router = Router()
 
     def do_GET(self):
-        self.router.route('GET')
+        self.router.route(self, 'GET')
     
     def do_POST(self):
-        self.router.route('POST')
+        self.router.route(self,'POST')
 
     def do_PUT(self):
-        self.router.route('PUT')
+        self.router.route(self,'PUT')
     
     def do_PATCH(self):
-        self.router.route('PATCH')
+        self.router.route(self,'PATCH')
 
     def do_DELETE(self):
-        self.router.route('DELETE')
+        self.router.route(self,'DELETE')
         
 
 def run_server():

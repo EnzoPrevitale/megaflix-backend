@@ -2,3 +2,8 @@ cffi
 cryptography
 pycparser
 PyJWT
+build
+colorama
+mysql-connector-python
+packaging
+pyproject_hooks

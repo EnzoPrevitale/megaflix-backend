@@ -12,6 +12,15 @@ class RestModel(Model):
     name = Column(int)
     age = Column(int)
 
+@request_mapping("/")
+class RootController(Controller):
+    def __init__(self):
+        super().__init__()
+
+    @get_mapping("/")
+    def get_root(self):
+        return {"root": "root"}
+
 
 @request_mapping("/a")
 class RestController(Controller):
@@ -32,6 +41,7 @@ class RestController(Controller):
         return {"get": 1}
     
 cont = RestController()
+root = RootController()
 
 if __name__ == '__main__':
     run_server()

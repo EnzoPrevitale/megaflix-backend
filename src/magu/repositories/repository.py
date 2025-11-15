@@ -1,4 +1,4 @@
-from magu.database.database import Database as db
+#from magu.database.database import Database as db
 from magu.models.model import Model
 
 class MySQLRepository:
@@ -11,5 +11,5 @@ class MySQLRepository:
         for attr in self.model.__dict__:
             print(attr, self.model.__dict__[attr])
 
-        with db.session() as session:
+        #with db.session() as session:
             ...#session.execute("INSERT INTO %s VALUEs ()", (table,))
